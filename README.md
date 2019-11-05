@@ -1,5 +1,4 @@
-[![Laravel](https://img.shields.io/badge/Laravel-4.0-orange.svg?style=flat-square)](http://laravel.com)
-[![Laravel](https://img.shields.io/badge/Laravel-5.0-orange.svg?style=flat-square)](http://laravel.com)
+[![Laravel](https://img.shields.io/badge/Laravel-6.0-orange.svg?style=flat-square)](http://laravel.com)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://tldrlegal.com/license/mit-license)
 
 # Imagecache
@@ -12,15 +11,20 @@ Using Composer, edit your `composer.json` file to require `devfactory/imagecache
 
 ##### Laravel 5
 
-	"require": {
-		"devfactory/imagecache": "3.0.*"
-	}
+```
+"require": {
+  "devfactory/imagecache": "dev-laravel6"
+},
 
-##### Laravel 4
+...
 
-	"require": {
-		"devfactory/imagecache": "2.1.*"
-	}
+"repositories": [
+  {
+    "type": "vcs",
+    "url": "https://github.com/pancevac/imagecache.git"
+  }
+],
+```
 
 Then from the terminal run
 
@@ -52,11 +56,8 @@ Publish the config:
 
 Define some presets in:
 
-##### Laravel  5
+##### Laravel  6
 `config/imagecache.presets.php`
-
-##### Laravel  4
-`app/config/packages/devfactory/imagecache/presets.php`
 
 ```php
 <?php
