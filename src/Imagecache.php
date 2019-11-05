@@ -106,6 +106,11 @@ class Imagecache {
   protected $use_placeholders;
 
   /**
+   * Placeholder properties
+   */
+  protected $placeholder = [];
+
+  /**
    * The laravel request object
    *
    * @var Illuminate\Http\Request
@@ -131,6 +136,8 @@ class Imagecache {
     $this->use_placeholders = config('imagecache.config.use_placeholders', FALSE);
 
     $this->request = request();
+
+    $this->placeholder = (object) config('imagecache.config.placeholder');
   }
 
   /**
@@ -601,7 +608,14 @@ class Imagecache {
   }
 
   protected function generate_placeholder() {
-    $src = 'http://www.placeholdr.pics/'. $this->preset->width .'/'. $this->preset->height;
+
+    $src = $this->placeholder->source . '/' .
+    $this->preset->width . 'x' . $this->preset->height . '/' .
+    $this->placeholder->background_start . '-' .
+    $this->placeholder->background_end . '/' .
+    $this->placeholder->text . '-' .
+    $this->placeholder->border . '/' .
+    $this->placeholder->label;
 
     $class = $this->get_class();
 

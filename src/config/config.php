@@ -38,4 +38,23 @@ return array(
    * Served through www.placeholdr.pics
    */
   'use_placeholders' => FALSE,
+
+  /**
+   * Placeholder properties
+   * 
+   * source - placeholder source url
+   * background_start - starting color of gradient
+   * background_end - ending color of gradient
+   * text - color of showing text
+   * labeL - showing text
+   * border - placeholder border color 
+   */
+  'placeholder' => [
+    'source' => 'http://www.placeholder.pics/svg',
+    'background_start' => 'f2f2f4',
+    'background_end' => 'FFFFFF',
+    'text' => '000000',
+    'border' => 'f2f2f4',
+    'label' => env('APP_NAME')
+  ],
 );
