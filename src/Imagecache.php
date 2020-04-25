@@ -1,6 +1,7 @@
 <?php namespace Devfactory\Imagecache;
 
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use File;
 
@@ -381,7 +382,7 @@ class Imagecache {
     $finfo = new \finfo(FILEINFO_MIME);
     $type = $finfo->file($this->upload_path . $this->file_name);
 
-    if (str_contains($type, 'image/svg+xml')) {
+    if (Str::contains($type, 'image/svg+xml')) {
       return TRUE;
     }
 
@@ -398,7 +399,7 @@ class Imagecache {
     $finfo = new \finfo(FILEINFO_MIME);
     $type = $finfo->file($this->upload_path . $this->file_name);
 
-    if (str_contains($type, 'image')) {
+    if (Str::contains($type, 'image')) {
       return TRUE;
     }
 
